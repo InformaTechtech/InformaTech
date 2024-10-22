@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    background-color: #272727;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+  
+  h1 {
+    color: #ff5500;
+    padding: 10px 0 0 5px;
+  }
+  
+  h2 {
+    color: blue;
+  }
+  
+  h3a, h3b, h3c {
+    font-weight: 1000;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
