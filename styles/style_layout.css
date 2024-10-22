@@ -4,11 +4,10 @@
 
 .widgets-container {
     display: flex;
-    flex-wrap: wrap; /* Permet l'enroulement des widgets sur les petits écrans */
     justify-content: space-between;
+    align-items: stretch;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 20px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -17,9 +16,8 @@
     background-color: #1d1d1d;
     color: #ffffff;
     border-radius: 10px;
-    flex-basis: 100%; /* Chaque widget prendra toute la largeur sur mobile */
-    max-width: 95%; /* Limite la largeur à 95% pour des marges sur les côtés */
-    margin: 10px auto; /* Centre les widgets et ajoute un espace vertical */
+    flex: 1;
+    max-width: calc(33.33% - 14px);
     display: flex;
     flex-direction: column;
 }
@@ -39,14 +37,27 @@
     margin: 0;
 }
 
-@media (min-width: 768px) {
+/* Media query pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+    .widgets-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
     .widget {
-        flex-basis: calc(33.33% - 20px); /* Pour les écrans plus larges, répartit à 3 sur la ligne */
-        max-width: calc(33.33% - 20px);
-        margin: 10px 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .widget-image {
+        height: 200px; /* Image plus grande pour mobile */
+    }
+
+    .widget p {
+        font-size: 18px; /* Texte plus grand pour une meilleure lisibilité */
+        padding: 20px;
     }
 }
-
 
   
 .fond {
